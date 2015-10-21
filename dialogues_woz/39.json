@@ -1,0 +1,98 @@
+{
+    "gender": "Female",
+    "age": "31-40",
+    "turns": [
+        {
+            "role": "Candidate",
+            "data": "Hello. I would like to discuss the issues of my contract."
+        },
+        {
+            "role": "Candidate",
+            "input": "I would like a position of project manager",
+            "output": {
+                "Offer": {
+                    "Job Description": "Project Manager"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "Ok! I can offer you a programmer position with a 120,000 salary.",
+            "output": {
+                "Offer": {
+                    "Job Description": "Programmer",
+                    "Salary": "120,000 USD"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I agree. Now let's talk about how we can agree on other issues. I would like a company car",
+            "output": {
+                "Accept": true,
+                "Offer": {
+                    "Leased Car": "With leased car"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "I can give you a company car, but your working hours will be 9.",
+            "output": {
+                "Offer": {
+                    "Leased Car": "With leased car",
+                    "Working Hours": "9 hours"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I agree. Let's proceed to another issue. I am expecting a fast promotion track",
+            "output": {
+                "Accept": true,
+                "Offer": {
+                    "Promotion Possibilities": "Fast promotion track"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "Yes, that sounds good- but is a 10% pension fun okay?",
+            "output": {
+                "Accept": true,
+                "Offer": {
+                    "Pension Fund": "10%"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I reject a pension of 10%. I want a pension of 20%",
+            "output": {
+                "Reject": {
+                    "Pension Fund": "10%"
+                },
+                "Offer": {
+                    "Pension Fund": "20%"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "I can do a pension of 20%!",
+            "output": {
+                "Accept": {
+                    "Pension Fund": "20%"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "data": "It's great that we agreed on 20%"
+        },
+        {
+            "role": "Candidate",
+            "data": "I'm happy that you accept. We can sign the agreement now. Please pick the values in the agreement draft and press Sign."
+        }
+    ]
+}
