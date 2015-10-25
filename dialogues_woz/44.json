@@ -1,6 +1,5 @@
 {
-    "gender": "Female",
-    "age": "31-40",
+    "set": "train",
     "turns": [
         {
             "role": "Candidate",
@@ -16,30 +15,19 @@
             }
         },
         {
-            "role": "Candidate",
-            "input": "I demand a position of project manager",
-            "output": {
-                "Offer": {
-                    "Job Description": "Project Manager"
-                }
-            }
-        },
-        {
             "role": "Employer",
-            "input": "I have changed the contract to the position of project manager. Does this satisfy you?",
+            "input": "I agree",
             "output": {
-                "Accept": {
-                    "Job Description": "Project Manager"
-                }
+                "Accept": true
             }
         },
         {
             "role": "Candidate",
-            "data": "It's great that we agreed on project manager"
+            "data": "It's great that you agree"
         },
         {
             "role": "Candidate",
-            "input": "I am willing to have a salary of 120,000",
+            "input": "I would like a salary of 120,000",
             "output": {
                 "Offer": {
                     "Salary": "120,000 USD"
@@ -48,7 +36,7 @@
         },
         {
             "role": "Employer",
-            "input": "The most te company can offer you is 90,000.",
+            "input": "I will offer 90,000",
             "output": {
                 "Offer": {
                     "Salary": "90,000 USD"
@@ -57,11 +45,51 @@
         },
         {
             "role": "Candidate",
-            "input": "I agree with a salary of 90,000. I would like to move on. I am willing to have a workday of 8 hours",
+            "input": "I agree with a salary of 90,000. Now let's talk about how we can agree on other issues. I would like a company car",
             "output": {
                 "Accept": {
                     "Salary": "90,000 USD"
                 },
+                "Offer": {
+                    "Leased Car": "With leased car"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "I agree",
+            "output": {
+                "Accept": true
+            }
+        },
+        {
+            "role": "Candidate",
+            "data": "I'm happy that you accept"
+        },
+        {
+            "role": "Candidate",
+            "input": "I would like a fast promotion track",
+            "output": {
+                "Offer": {
+                    "Promotion Possibilities": "Fast promotion track"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "I agree",
+            "output": {
+                "Accept": true
+            }
+        },
+        {
+            "role": "Candidate",
+            "data": "I'm happy that you accept"
+        },
+        {
+            "role": "Candidate",
+            "input": "I would like a workday of 8 hours",
+            "output": {
                 "Offer": {
                     "Working Hours": "8 hours"
                 }
@@ -69,7 +97,7 @@
         },
         {
             "role": "Employer",
-            "input": "I am sorry. The best we can do is 9 hours.",
+            "input": "I will offer 9 hours",
             "output": {
                 "Offer": {
                     "Working Hours": "9 hours"
@@ -78,7 +106,7 @@
         },
         {
             "role": "Candidate",
-            "input": "I accept 9 hours. Let's discuss another issue. I demand a pension of 20%",
+            "input": "I accept a workday of 9 hours. Let's discuss another issue. I would like a pension of 20%",
             "output": {
                 "Accept": {
                     "Working Hours": "9 hours"
@@ -90,86 +118,14 @@
         },
         {
             "role": "Employer",
-            "input": "I can agree to that pension.",
-            "output": {
-                "Accept": "Pension Fund"
-            }
-        },
-        {
-            "role": "Candidate",
-            "data": "I'm happy that you accept the pension fund"
-        },
-        {
-            "role": "Candidate",
-            "input": "I want a fast promotion track",
-            "output": {
-                "Offer": {
-                    "Promotion Possibilities": "Fast promotion track"
-                }
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "You got it.",
+            "input": "I agree",
             "output": {
                 "Accept": true
             }
         },
         {
             "role": "Candidate",
-            "data": "I'm happy that you accept"
-        },
-        {
-            "role": "Candidate",
-            "input": "I am expecting a company car",
-            "output": {
-                "Offer": {
-                    "Leased Car": "With leased car"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I am expecting a company car",
-            "output": {
-                "Offer": {
-                    "Leased Car": "With leased car"
-                }
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "We do not have company cars available. This is not optional.",
-            "output": {
-                "Reject": {
-                    "Leased Car": "With leased car"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I would like a company car",
-            "output": {
-                "Offer": {
-                    "Leased Car": "With leased car"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I would like a company car",
-            "output": {
-                "Offer": {
-                    "Leased Car": "With leased car"
-                }
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "As I have generously compromised on all other negotiations, I believe negotiations are over.",
-            "output": {
-                "Quit": true
-            }
+            "data": "I'm happy that you accept. We can sign the agreement now. Please pick the values in the agreement draft and press Sign."
         }
     ]
 }

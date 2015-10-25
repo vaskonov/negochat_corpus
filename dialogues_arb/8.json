@@ -1,6 +1,5 @@
 {
-    "gender": "Male",
-    "age": "21-30",
+    "set": "train",
     "turns": [
         {
             "role": "Candidate",
@@ -8,7 +7,34 @@
         },
         {
             "role": "Candidate",
-            "input": "I demand a position of project manager",
+            "input": "I want a position of project manager",
+            "output": {
+                "Offer": {
+                    "Job Description": "Project Manager"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I would like a position of project manager",
+            "output": {
+                "Offer": {
+                    "Job Description": "Project Manager"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I would like a position of project manager",
+            "output": {
+                "Offer": {
+                    "Job Description": "Project Manager"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I am willing to have a position of project manager",
             "output": {
                 "Offer": {
                     "Job Description": "Project Manager"
@@ -17,7 +43,7 @@
         },
         {
             "role": "Employer",
-            "input": "How about programmer?",
+            "input": "I would like to offer you a position as Programmer.",
             "output": {
                 "Offer": {
                     "Job Description": "Programmer"
@@ -26,7 +52,7 @@
         },
         {
             "role": "Candidate",
-            "input": "I agree with a position of programmer. Now let's talk about how we can agree on other issues. I am expecting a salary of 120,000",
+            "input": "I accept programmer position. Now let's talk about how we can agree on other issues. I want a salary of 120,000",
             "output": {
                 "Accept": {
                     "Job Description": "Programmer"
@@ -38,28 +64,7 @@
         },
         {
             "role": "Employer",
-            "input": "How about 60,000?",
-            "output": {
-                "Offer": {
-                    "Salary": "60,000 USD"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I reject 60,000. I want a salary of 120,000",
-            "output": {
-                "Reject": {
-                    "Salary": "60,000 USD"
-                },
-                "Offer": {
-                    "Salary": "120,000 USD"
-                }
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "Would you accept 90,000?",
+            "input": "I would like to offer you 90,000 for salary.",
             "output": {
                 "Offer": {
                     "Salary": "90,000 USD"
@@ -68,30 +73,28 @@
         },
         {
             "role": "Candidate",
-            "input": "I refuse 90,000. I am willing to have a salary of 120,000",
+            "input": "I accept 90,000. Now let's talk about how we can agree on other issues. I am willing to have a company car",
             "output": {
-                "Reject": {
+                "Accept": {
                     "Salary": "90,000 USD"
                 },
                 "Offer": {
-                    "Salary": "120,000 USD"
+                    "Leased Car": "With leased car"
                 }
             }
         },
         {
             "role": "Employer",
-            "input": "Fine",
+            "input": "I cannot offer you a company car.",
             "output": {
-                "Accept": true
+                "Reject": {
+                    "Leased Car": "With leased car"
+                }
             }
         },
         {
             "role": "Candidate",
-            "data": "I'm happy that you accept"
-        },
-        {
-            "role": "Candidate",
-            "input": "I want a company car",
+            "input": "I would like a company car",
             "output": {
                 "Offer": {
                     "Leased Car": "With leased car"
@@ -100,19 +103,20 @@
         },
         {
             "role": "Employer",
-            "input": "Agreed",
+            "input": "I would like not to offer you a company car.",
             "output": {
-                "Accept": true
+                "Offer": {
+                    "Leased Car": "Without leased car"
+                }
             }
         },
         {
             "role": "Candidate",
-            "data": "It's good to reach an agreement on this"
-        },
-        {
-            "role": "Candidate",
-            "input": "I am willing to have a fast promotion track",
+            "input": "I accept no company car. Let's proceed to another issue. I want a fast promotion track",
             "output": {
+                "Accept": {
+                    "Leased Car": "Without leased car"
+                },
                 "Offer": {
                     "Promotion Possibilities": "Fast promotion track"
                 }
@@ -120,18 +124,20 @@
         },
         {
             "role": "Employer",
-            "input": "Agreed",
+            "input": "I accept your offer of a fast promotion track.",
             "output": {
-                "Accept": true
+                "Accept": {
+                    "Promotion Possibilities": "Fast promotion track"
+                }
             }
         },
         {
             "role": "Candidate",
-            "data": "It's great that you agree"
+            "data": "I'm happy that you accept the fast promotion track"
         },
         {
             "role": "Candidate",
-            "input": "I would like a workday of 8 hours",
+            "input": "I am willing to have a workday of 8 hours",
             "output": {
                 "Offer": {
                     "Working Hours": "8 hours"
@@ -140,7 +146,7 @@
         },
         {
             "role": "Employer",
-            "input": "How about 10 hours?",
+            "input": "I would like to offer you a workday of 10 hours.",
             "output": {
                 "Offer": {
                     "Working Hours": "10 hours"
@@ -149,40 +155,16 @@
         },
         {
             "role": "Candidate",
-            "input": "I reject 10 hours. I am willing to have a workday of 8 hours",
+            "input": "I refuse 10 hours",
             "output": {
                 "Reject": {
                     "Working Hours": "10 hours"
-                },
-                "Offer": {
-                    "Working Hours": "8 hours"
                 }
             }
         },
         {
             "role": "Employer",
-            "input": "I gave you a car. You have to work 10 hours.",
-            "output": {
-                "Offer": {
-                    "Working Hours": "10 hours"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I reject a workday of 10 hours. I am expecting a workday of 8 hours",
-            "output": {
-                "Reject": {
-                    "Working Hours": "10 hours"
-                },
-                "Offer": {
-                    "Working Hours": "8 hours"
-                }
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "How about 9 hours?",
+            "input": "I would like to offer you a workday of 9 hours.",
             "output": {
                 "Offer": {
                     "Working Hours": "9 hours"
@@ -191,93 +173,50 @@
         },
         {
             "role": "Candidate",
-            "input": "I reject a workday of 9 hours. I want a workday of 8 hours",
+            "input": "I disagree about a workday of 9 hours",
             "output": {
                 "Reject": {
                     "Working Hours": "9 hours"
-                },
-                "Offer": {
-                    "Working Hours": "8 hours"
                 }
             }
         },
         {
             "role": "Employer",
-            "input": "You will work 10 hours.",
+            "input": "If I offer you a leased car, will you accept a workday of 10 hours?",
             "output": {
                 "Offer": {
+                    "Leased Car": "With leased car",
                     "Working Hours": "10 hours"
                 }
             }
         },
         {
             "role": "Candidate",
-            "input": "I refuse 10 hours. I am willing to have a workday of 8 hours",
+            "input": "I refuse. I am expecting a workday of 8 hours and I want no agreement on leased car",
             "output": {
-                "Reject": {
-                    "Working Hours": "10 hours"
-                },
+                "Reject": true,
                 "Offer": {
-                    "Working Hours": "8 hours"
+                    "Working Hours": "8 hours",
+                    "Leased Car": "No agreement"
                 }
             }
         },
         {
             "role": "Employer",
-            "input": "Let's settle for 9 hours.",
+            "input": "All right, I accept your offer of 8 hours.",
             "output": {
-                "Offer": {
-                    "Working Hours": "9 hours"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I reject a workday of 9 hours. I am expecting a workday of 8 hours",
-            "output": {
-                "Reject": {
-                    "Working Hours": "9 hours"
-                },
-                "Offer": {
+                "Accept": {
                     "Working Hours": "8 hours"
                 }
             }
         },
         {
-            "role": "Employer",
-            "input": "How about 10 hours?",
-            "output": {
-                "Offer": {
-                    "Working Hours": "10 hours"
-                }
-            }
+            "role": "Candidate",
+            "data": "This is great that you accept"
         },
         {
             "role": "Candidate",
-            "input": "I refuse 10 hours. I am willing to have a workday of 8 hours",
-            "output": {
-                "Reject": {
-                    "Working Hours": "10 hours"
-                },
-                "Offer": {
-                    "Working Hours": "8 hours"
-                }
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "Fine",
-            "output": {
-                "Accept": true
-            }
-        },
-        {
-            "role": "Candidate",
-            "data": "It's good to reach an agreement on this"
-        },
-        {
-            "role": "Candidate",
-            "input": "I am willing to have a pension of 20%",
+            "input": "Let's discuss another issue. I am expecting a pension of 20%",
             "output": {
                 "Offer": {
                     "Pension Fund": "20%"
@@ -286,7 +225,16 @@
         },
         {
             "role": "Employer",
-            "input": "agreed",
+            "input": "I would really like you to accept a pension of 10%.",
+            "output": {
+                "Offer": {
+                    "Pension Fund": "10%"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I agree with the offer",
             "output": {
                 "Accept": true
             }

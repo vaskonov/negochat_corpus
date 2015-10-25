@@ -1,6 +1,5 @@
 {
-    "gender": "Female",
-    "age": "31-40",
+    "set": "train",
     "turns": [
         {
             "role": "Candidate",
@@ -16,26 +15,9 @@
             }
         },
         {
-            "role": "Employer",
-            "input": "Greats let's discuss the issues.",
-            "output": {}
-        },
-        {
-            "role": "Employer",
-            "input": "I can give you a job title of programmer, how does that sound? You are very smart and that makes you sound smarter! ",
-            "output": {
-                "Offer": {
-                    "Job Description": "Programmer"
-                }
-            }
-        },
-        {
             "role": "Candidate",
-            "input": "I refuse programmer position. I demand a position of project manager",
+            "input": "I demand a position of project manager",
             "output": {
-                "Reject": {
-                    "Job Description": "Programmer"
-                },
                 "Offer": {
                     "Job Description": "Project Manager"
                 }
@@ -43,81 +25,50 @@
         },
         {
             "role": "Employer",
-            "input": "You are not qualified to be team manager right now, but I definitely see that in your future. I would like to offer you the job of QA.",
-            "output": {
-                "Reject": {
-                    "Job Description": "Team Manager"
-                },
-                "Offer": {
-                    "Job Description": "QA"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I disagree about a position of qa. I would like a position of project manager",
-            "output": {
-                "Reject": {
-                    "Job Description": "QA"
-                },
-                "Offer": {
-                    "Job Description": "Project Manager"
-                }
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "How about we talk about the car issue. There is no way that our company can provide you with a new car, so you will need to use your own.",
-            "output": {
-                "Offer": {
-                    "Leased Car": "Without leased car"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I agree with no company car. I would like to continue and discuss another issue. I am willing to have a position of project manager",
+            "input": "I have changed the contract to the position of project manager. Does this satisfy you?",
             "output": {
                 "Accept": {
-                    "Leased Car": "Without leased car"
-                },
-                "Offer": {
                     "Job Description": "Project Manager"
                 }
             }
         },
         {
-            "role": "Employer",
-            "input": "Ok, you are adamant about being project manager. How about you can be the project manager with a starting salary of $60,000.00",
+            "role": "Candidate",
+            "data": "It's great that we agreed on project manager"
+        },
+        {
+            "role": "Candidate",
+            "input": "I am willing to have a salary of 120,000",
             "output": {
                 "Offer": {
-                    "Job Description": "Project Manager",
-                    "Salary": "60,000 USD"
+                    "Salary": "120,000 USD"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "The most te company can offer you is 90,000.",
+            "output": {
+                "Offer": {
+                    "Salary": "90,000 USD"
                 }
             }
         },
         {
             "role": "Candidate",
-            "input": "I accept the previous offer. I would like to move on. I want a workday of 8 hours",
+            "input": "I agree with a salary of 90,000. I would like to move on. I am willing to have a workday of 8 hours",
             "output": {
-                "Accept": true,
+                "Accept": {
+                    "Salary": "90,000 USD"
+                },
                 "Offer": {
                     "Working Hours": "8 hours"
                 }
             }
         },
         {
-            "role": "Candidate",
-            "input": "I would like a workday of 8 hours",
-            "output": {
-                "Offer": {
-                    "Working Hours": "8 hours"
-                }
-            }
-        },
-        {
             "role": "Employer",
-            "input": "I was thinking 10, but how about we split the difference and you work 9? I will also be willing to give you a 4 day work week.",
+            "input": "I am sorry. The best we can do is 9 hours.",
             "output": {
                 "Offer": {
                     "Working Hours": "9 hours"
@@ -126,7 +77,7 @@
         },
         {
             "role": "Candidate",
-            "input": "I accept 9 hours. Let's discuss another issue. I want a pension of 20%",
+            "input": "I accept 9 hours. Let's discuss another issue. I demand a pension of 20%",
             "output": {
                 "Accept": {
                     "Working Hours": "9 hours"
@@ -138,88 +89,19 @@
         },
         {
             "role": "Employer",
-            "input": "I will accept a 20% pension fund, but you're going to have to start off on the slow promotion track, seeing as you are already project manager.",
+            "input": "I can agree to that pension.",
             "output": {
-                "Accept": {
-                    "Pension Fund": "20%"
-                },
-                "Offer": {
-                    "Promotion Possibilities": "Slow promotion track"
-                }
+                "Accept": "Pension Fund"
             }
         },
         {
             "role": "Candidate",
-            "input": "I disagree with the offer",
-            "output": {
-                "Reject": true
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "Okay, how about a fast promotion track with 10% pension fund/",
-            "output": {
-                "Offer": {
-                    "Pension Fund": "10%",
-                    "Promotion Possibilities": "Fast promotion track"
-                }
-            }
+            "data": "I'm happy that you accept the pension fund"
         },
         {
             "role": "Candidate",
-            "input": "I refuse",
+            "input": "I want a fast promotion track",
             "output": {
-                "Reject": true
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "Okay 10 hour work day, 4 days a week with a fast promotion track.",
-            "output": {
-                "Offer": {
-                    "Promotion Possibilities": "Fast promotion track",
-                    "Working Hours": "10 hours"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I refuse",
-            "output": {
-                "Reject": true
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "Well then I can't hire you.",
-            "output": {
-                "Quit": true
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I would like a pension of 20%",
-            "output": {
-                "Offer": {
-                    "Pension Fund": "20%"
-                }
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "20 pension with 10 hour work day. ",
-            "output": {
-                "Offer": {
-                    "Pension Fund": "20%",
-                    "Working Hours": "10 hours"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I agree with the offer. Let's proceed to another issue. I am willing to have a fast promotion track",
-            "output": {
-                "Accept": true,
                 "Offer": {
                     "Promotion Possibilities": "Fast promotion track"
                 }
@@ -227,19 +109,66 @@
         },
         {
             "role": "Employer",
-            "input": "I agree",
+            "input": "You got it.",
             "output": {
                 "Accept": true
             }
         },
         {
             "role": "Candidate",
-            "data": "It's great that you agree"
+            "data": "I'm happy that you accept"
+        },
+        {
+            "role": "Candidate",
+            "input": "I am expecting a company car",
+            "output": {
+                "Offer": {
+                    "Leased Car": "With leased car"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I am expecting a company car",
+            "output": {
+                "Offer": {
+                    "Leased Car": "With leased car"
+                }
+            }
         },
         {
             "role": "Employer",
-            "input": "Let's sign the agreement!",
-            "output": {}
+            "input": "We do not have company cars available. This is not optional.",
+            "output": {
+                "Reject": {
+                    "Leased Car": "With leased car"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I would like a company car",
+            "output": {
+                "Offer": {
+                    "Leased Car": "With leased car"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I would like a company car",
+            "output": {
+                "Offer": {
+                    "Leased Car": "With leased car"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "As I have generously compromised on all other negotiations, I believe negotiations are over.",
+            "output": {
+                "Quit": true
+            }
         }
     ]
 }

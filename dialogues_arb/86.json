@@ -1,6 +1,5 @@
 {
-    "gender": "Female",
-    "age": "21-30",
+    "set": "test",
     "turns": [
         {
             "role": "Candidate",
@@ -17,84 +16,75 @@
         },
         {
             "role": "Employer",
-            "input": "I cannot offer you that position, but we do have the position of programmer open at this time",
+            "input": "The salary we offer for proejct manager is 60,000 USD",
             "output": {
                 "Offer": {
-                    "Job Description": "Programmer"
-                },
-                "Reject": "Job Description"
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I agree with a position of programmer. Now let's talk about how we can agree on other issues. I want a salary of 120,000",
-            "output": {
-                "Accept": {
-                    "Job Description": "Programmer"
-                },
-                "Offer": {
-                    "Salary": "120,000 USD"
+                    "Salary": "60,000 USD",
+                    "Job Description": "Project Manager"
                 }
             }
         },
         {
             "role": "Candidate",
-            "input": "I am willing to have a salary of 120,000",
-            "output": {
-                "Offer": {
-                    "Salary": "120,000 USD"
-                }
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "Our starting salaries for programmers is 60,000",
-            "output": {
-                "Offer": {
-                    "Job Description": "Programmer",
-                    "Salary": "60,000 USD"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I disagree. I am willing to have a salary of 120,000 and I want a position of project manager",
+            "input": "I refuse. I am expecting a salary of 120,000",
             "output": {
                 "Reject": true,
                 "Offer": {
-                    "Salary": "120,000 USD",
-                    "Job Description": "Project Manager"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I am willing to have a salary of 120,000",
-            "output": {
-                "Offer": {
                     "Salary": "120,000 USD"
                 }
             }
         },
         {
-            "role": "Employer",
-            "input": "As I mentioned, we are not seeking project managers at this time. I can offer you 90,000 as a programmer on a fast promotion track",
+            "role": "Candidate",
+            "data": "Sorry, I changed my preferences"
+        },
+        {
+            "role": "Candidate",
+            "input": "I want a position of project manager",
             "output": {
                 "Offer": {
-                    "Job Description": "Programmer",
-                    "Promotion Possibilities": "Fast promotion track",
+                    "Job Description": "Project Manager"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "We can offer 90,000",
+            "output": {
+                "Offer": {
+                    "Salary": "90,000 USD"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I agree with a salary of 90,000. I would like to continue and discuss another issue. I want a position of project manager",
+            "output": {
+                "Accept": {
                     "Salary": "90,000 USD"
                 },
-                "Reject": {
+                "Offer": {
+                    "Job Description": "Project Manager"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "Okay, project manager is fine.",
+            "output": {
+                "Accept": {
                     "Job Description": "Project Manager"
                 }
             }
         },
         {
             "role": "Candidate",
-            "input": "I agree with the offer. Now let's talk about how we can agree on other issues. I am expecting a company car",
+            "data": "I'm happy that you accept the project manager"
+        },
+        {
+            "role": "Candidate",
+            "input": "I want a company car",
             "output": {
-                "Accept": true,
                 "Offer": {
                     "Leased Car": "With leased car"
                 }
@@ -102,11 +92,107 @@
         },
         {
             "role": "Employer",
-            "input": "I can only offer a leased car if you agree to 10 working hours",
+            "input": "For that salary we cannot offer a company car",
+            "output": {
+                "Reject": {
+                    "Leased Car": "With leased car"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I agree with no company car. Let's proceed to another issue. I am willing to have a fast promotion track",
+            "output": {
+                "Accept": {
+                    "Leased Car": "Without leased car"
+                },
+                "Offer": {
+                    "Promotion Possibilities": "Fast promotion track"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "Fast promotion track is fine.",
+            "output": {
+                "Accept": {
+                    "Promotion Possibilities": "Fast promotion track"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "data": "I'm happy that you accept the fast promotion track"
+        },
+        {
+            "role": "Candidate",
+            "input": "I would like a workday of 8 hours",
             "output": {
                 "Offer": {
-                    "Leased Car": "With leased car",
+                    "Working Hours": "8 hours"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "10 hours is the preferred workday",
+            "output": {
+                "Offer": {
                     "Working Hours": "10 hours"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I disagree about a workday of 10 hours",
+            "output": {
+                "Reject": {
+                    "Working Hours": "10 hours"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "WE can increase your pension fund to 20% with a 10 hour workday",
+            "output": {
+                "Offer": {
+                    "Pension Fund": "20%",
+                    "Working Hours": "10 hours"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I reject the previous offer",
+            "output": {
+                "Reject": true
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "Can we agree on a 9 hour workday",
+            "output": {
+                "Offer": {
+                    "Working Hours": "9 hours"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I refuse 9 hours",
+            "output": {
+                "Reject": {
+                    "Working Hours": "9 hours"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "With an 8 hour workday there would be 10% pension",
+            "output": {
+                "Offer": {
+                    "Pension Fund": "10%",
+                    "Working Hours": "8 hours"
                 }
             }
         },
@@ -119,223 +205,47 @@
         },
         {
             "role": "Candidate",
-            "input": "I want a company car",
+            "input": "I demand a workday of 8 hours",
             "output": {
                 "Offer": {
-                    "Leased Car": "With leased car"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I want a company car",
-            "output": {
-                "Offer": {
-                    "Leased Car": "With leased car"
+                    "Working Hours": "8 hours"
                 }
             }
         },
         {
             "role": "Employer",
-            "input": "In order to agree to company car, I will need a compromise regarding working hours. Will you agree to 10 hours, with 10% pension fund?",
+            "input": "With the salary of 90,000 USD the minimum workday would be 9 hours",
             "output": {
                 "Offer": {
-                    "Leased Car": "With leased car",
-                    "Pension Fund": "10%",
-                    "Working Hours": "10 hours"
+                    "Working Hours": "9 hours",
+                    "Salary": "90,000 USD"
                 }
             }
         },
         {
             "role": "Candidate",
-            "input": "I refuse. I am expecting a workday of 8 hours, I am willing to have no agreement on leased car and I am expecting a pension of 20%",
+            "input": "I accept 9 hours. Let's discuss another issue. I am willing to have a pension of 20%",
             "output": {
-                "Reject": true,
-                "Offer": {
-                    "Working Hours": "8 hours",
-                    "Leased Car": "No agreement",
-                    "Pension Fund": "20%"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "data": "Sorry, I changed my preferences"
-        },
-        {
-            "role": "Candidate",
-            "input": "I want no agreement on leased car",
-            "output": {
-                "Offer": {
-                    "Leased Car": "No agreement"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I want no agreement on leased car",
-            "output": {
-                "Offer": {
-                    "Leased Car": "No agreement"
-                }
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "I can only offer 20% pension with a 9 hour work day and no leased car",
-            "output": {
-                "Offer": {
-                    "Leased Car": "Without leased car",
-                    "Pension Fund": "20%",
+                "Accept": {
                     "Working Hours": "9 hours"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I disagree with the offer. I am expecting a workday of 8 hours, I would like a company car and I would like a pension of 10%",
-            "output": {
-                "Reject": true,
+                },
                 "Offer": {
-                    "Working Hours": "8 hours",
-                    "Leased Car": "With leased car",
-                    "Pension Fund": "10%"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "data": "Sorry, I changed my preferences"
-        },
-        {
-            "role": "Candidate",
-            "input": "I would like a company car",
-            "output": {
-                "Offer": {
-                    "Leased Car": "With leased car"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I am expecting a company car",
-            "output": {
-                "Offer": {
-                    "Leased Car": "With leased car"
-                }
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "I will lease you a car if you agree to increased hours of 10 working hours",
-            "output": {
-                "Offer": {
-                    "Leased Car": "With leased car",
-                    "Working Hours": "10 hours"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I refuse. I am expecting a workday of 8 hours and I am expecting no agreement on leased car",
-            "output": {
-                "Reject": true,
-                "Offer": {
-                    "Working Hours": "8 hours",
-                    "Leased Car": "No agreement"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I want no agreement on leased car",
-            "output": {
-                "Offer": {
-                    "Leased Car": "No agreement"
-                }
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "I will offer a company car, 9 hour work day, with a 10% pension",
-            "output": {
-                "Offer": {
-                    "Leased Car": "With leased car",
-                    "Pension Fund": "10%",
-                    "Working Hours": "9 hours"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I disagree. I am expecting a workday of 8 hours, I am expecting no agreement on leased car and I am expecting a pension of 20%",
-            "output": {
-                "Reject": true,
-                "Offer": {
-                    "Working Hours": "8 hours",
-                    "Leased Car": "No agreement",
                     "Pension Fund": "20%"
                 }
             }
         },
         {
             "role": "Employer",
-            "input": "I can offer a company car, 20% pension with a 10 hour work day",
+            "input": "I will agree to 20%",
             "output": {
-                "Offer": {
-                    "Leased Car": "With leased car",
-                    "Pension Fund": "20%",
-                    "Working Hours": "10 hours"
+                "Accept": {
+                    "Pension Fund": "20%"
                 }
             }
         },
         {
             "role": "Candidate",
-            "input": "I disagree. I am willing to have a workday of 8 hours, I am willing to have no agreement on leased car and I want a pension of 10%",
-            "output": {
-                "Reject": true,
-                "Offer": {
-                    "Working Hours": "8 hours",
-                    "Leased Car": "No agreement",
-                    "Pension Fund": "10%"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "data": "Sorry, I changed my preferences"
-        },
-        {
-            "role": "Candidate",
-            "input": "I am expecting a company car",
-            "output": {
-                "Offer": {
-                    "Leased Car": "With leased car"
-                }
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "I will agree to a company car, 20% pension and 9 hour work day",
-            "output": {
-                "Offer": {
-                    "Leased Car": "With leased car",
-                    "Pension Fund": "20%",
-                    "Working Hours": "9 hours"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I agree with the offer",
-            "output": {
-                "Accept": true
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "Wonderful. Please sign the agreement",
-            "output": {}
+            "data": "I'm happy that you accept. We can sign the agreement now. Please pick the values in the agreement draft and press Sign."
         }
     ]
 }

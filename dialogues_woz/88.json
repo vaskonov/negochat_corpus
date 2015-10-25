@@ -1,6 +1,5 @@
 {
-    "gender": "Female",
-    "age": "31-40",
+    "set": "test",
     "turns": [
         {
             "role": "Candidate",
@@ -8,7 +7,16 @@
         },
         {
             "role": "Candidate",
-            "input": "I am willing to have a position of project manager",
+            "input": "I want a position of project manager",
+            "output": {
+                "Offer": {
+                    "Job Description": "Project Manager"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I am expecting a position of project manager",
             "output": {
                 "Offer": {
                     "Job Description": "Project Manager"
@@ -17,8 +25,9 @@
         },
         {
             "role": "Employer",
-            "input": "What salary are you looking for?",
+            "input": "Okay. What kind of salary were you looking for?",
             "output": {
+                "Accept": true,
                 "Query": {
                     "Offer": "Salary"
                 }
@@ -26,12 +35,16 @@
         },
         {
             "role": "Candidate",
-            "input": "I am expecting a salary of 120,000",
+            "input": "I want a salary of 120,000",
             "output": {
                 "Offer": {
                     "Salary": "120,000 USD"
                 }
             }
+        },
+        {
+            "role": "Candidate",
+            "data": "It's good to reach an agreement on this"
         },
         {
             "role": "Candidate",
@@ -43,92 +56,289 @@
             }
         },
         {
+            "role": "Candidate",
+            "input": "I want a salary of 120,000",
+            "output": {
+                "Offer": {
+                    "Salary": "120,000 USD"
+                }
+            }
+        },
+        {
             "role": "Employer",
-            "input": "I can offer 90,000 and a leased car.",
+            "input": "We could negotiate about a position of a Programmer, but our budget does not allow us to offer that much to our Project Managers.",
+            "output": {
+                "Offer": {
+                    "Job Description": "Programmer"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I accept programmer position. Now let's talk about how we can agree on other issues. I am willing to have a salary of 120,000",
+            "output": {
+                "Accept": {
+                    "Job Description": "Programmer"
+                },
+                "Offer": {
+                    "Salary": "120,000 USD"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I am willing to have a salary of 120,000",
+            "output": {
+                "Offer": {
+                    "Salary": "120,000 USD"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "Our base pay is 60,000 and raises with time and experience. How does that sound?",
+            "output": {
+                "Offer": {
+                    "Salary": "60,000 USD"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I agree with a salary of 60,000. Now let's talk about how we can agree on other issues. I want a company car",
+            "output": {
+                "Accept": {
+                    "Salary": "60,000 USD"
+                },
+                "Offer": {
+                    "Leased Car": "With leased car"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I am expecting a company car",
+            "output": {
+                "Offer": {
+                    "Leased Car": "With leased car"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I am willing to have a company car",
+            "output": {
+                "Offer": {
+                    "Leased Car": "With leased car"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "A company car comes with your first raise, but you will begin with no leased car. I am sure you can understand?",
+            "output": {
+                "Reject": {
+                    "Leased Car": "With leased car"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I want a company car",
+            "output": {
+                "Offer": {
+                    "Leased Car": "With leased car"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I would like a company car",
+            "output": {
+                "Offer": {
+                    "Leased Car": "With leased car"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "We can offer you a company car if you accept 10 working hours?",
             "output": {
                 "Offer": {
                     "Leased Car": "With leased car",
-                    "Salary": "90,000 USD"
+                    "Working Hours": "10 hours"
                 }
             }
         },
         {
             "role": "Candidate",
-            "input": "I agree with the offer. I would like to continue and discuss another issue. I want a position of project manager",
-            "output": {
-                "Accept": true,
-                "Offer": {
-                    "Job Description": "Project Manager"
-                }
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "Yes, you are being offered project manager. What is your other issue?",
-            "output": {
-                "Accept": {
-                    "Job Description": "Project Manager"
-                },
-                "Query": "Offer"
-            }
-        },
-        {
-            "role": "Candidate",
-            "data": "It's great that we agreed on project manager"
-        },
-        {
-            "role": "Candidate",
-            "input": "I am expecting a fast promotion track",
-            "output": {
-                "Offer": {
-                    "Promotion Possibilities": "Fast promotion track"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I would like a fast promotion track",
-            "output": {
-                "Offer": {
-                    "Promotion Possibilities": "Fast promotion track"
-                }
-            }
-        },
-        {
-            "role": "Employer",
-            "input": "You can be on fast promotion track, but you will need to work 9 or 10 hours per day.",
-            "output": {
-                "Accept": {
-                    "Promotion Possibilities": "Fast promotion track"
-                },
-                "Offer": {
-                    "Working Hours": "9 hours"
-                }
-            }
-        },
-        {
-            "role": "Candidate",
-            "input": "I disagree",
+            "input": "I disagree with the offer",
             "output": {
                 "Reject": true
             }
         },
         {
             "role": "Employer",
-            "input": "Unfortunately that is what it takes to get to the top quickly, working 9 hours.",
+            "input": "Then we agree upon no leased car?",
             "output": {
                 "Offer": {
+                    "Leased Car": "Without leased car"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I disagree about no company car. I am expecting a company car",
+            "output": {
+                "Reject": {
+                    "Leased Car": "Without leased car"
+                },
+                "Offer": {
+                    "Leased Car": "With leased car"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "We can offer a company car if you accept 10 working hours.",
+            "output": {
+                "Offer": {
+                    "Leased Car": "With leased car",
+                    "Working Hours": "10 hours"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I disagree with the offer",
+            "output": {
+                "Reject": true
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "What are you willing to offer?",
+            "output": {
+                "Query": "Offer"
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "Let's come back to that then. What working hours are you looking for?",
+            "output": {
+                "Query": {
+                    "Offer": "Working Hours"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I am expecting a workday of 8 hours",
+            "output": {
+                "Offer": {
+                    "Working Hours": "8 hours"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I am willing to have a workday of 8 hours",
+            "output": {
+                "Offer": {
+                    "Working Hours": "8 hours"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I would like a workday of 8 hours",
+            "output": {
+                "Offer": {
+                    "Working Hours": "8 hours"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "If you are looking for 8 hours, that comes with no leased car, a 10% pension fund, and slow track promotion possibilities.",
+            "output": {
+                "Offer": {
+                    "Leased Car": "Without leased car",
+                    "Pension Fund": "10%",
+                    "Promotion Possibilities": "Slow promotion track",
+                    "Working Hours": "8 hours"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I reject the previous offer",
+            "output": {
+                "Reject": true
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "What do you have to suggest?",
+            "output": {
+                "Query": "Offer"
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "If you are looking for 9 hours, we could include a company car but you would remain at 10% on the pension fund and slow promotion track",
+            "output": {
+                "Offer": {
+                    "Leased Car": "With leased car",
+                    "Pension Fund": "10%",
+                    "Promotion Possibilities": "Slow promotion track",
                     "Working Hours": "9 hours"
                 }
             }
         },
         {
             "role": "Candidate",
-            "input": "I accept 9 hours. Let's proceed to another issue. I am expecting a fast promotion track",
+            "input": "I refuse. I would like a workday of 8 hours, I am expecting a pension of 20%, I would like no agreement on leased car and I am willing to have a fast promotion track",
+            "output": {
+                "Reject": true,
+                "Offer": {
+                    "Working Hours": "8 hours",
+                    "Pension Fund": "20%",
+                    "Leased Car": "No agreement",
+                    "Promotion Possibilities": "Fast promotion track"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "data": "Sorry, I changed my preferences"
+        },
+        {
+            "role": "Candidate",
+            "input": "I want no agreement on leased car",
+            "output": {
+                "Offer": {
+                    "Leased Car": "No agreement"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "good, we agree on no agreement on a leased car?",
             "output": {
                 "Accept": {
-                    "Working Hours": "9 hours"
-                },
+                    "Leased Car": "No agreement"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "data": "It's great that we agreed on no agreement"
+        },
+        {
+            "role": "Candidate",
+            "input": "I want a fast promotion track",
+            "output": {
                 "Offer": {
                     "Promotion Possibilities": "Fast promotion track"
                 }
@@ -136,16 +346,43 @@
         },
         {
             "role": "Employer",
-            "input": "Yes, we agree on fast promotion track.",
+            "input": "9 hours for fast track promotion.",
             "output": {
-                "Accept": {
-                    "Promotion Possibilities": "Fast promotion track"
+                "Offer": {
+                    "Promotion Possibilities": "Fast promotion track",
+                    "Working Hours": "9 hours"
                 }
             }
         },
         {
             "role": "Candidate",
-            "data": "I'm happy that you accept the fast promotion track"
+            "input": "I agree with the offer. Let's discuss another issue. I want a pension of 20%",
+            "output": {
+                "Accept": true,
+                "Offer": {
+                    "Pension Fund": "20%"
+                }
+            }
+        },
+        {
+            "role": "Employer",
+            "input": "Great! Did we agree on 10 hours and fast track?",
+            "output": {
+                "Offer": {
+                    "Promotion Possibilities": "Fast promotion track",
+                    "Working Hours": "10 hours"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I agree with the offer. Let's discuss another issue. I want a pension of 20%",
+            "output": {
+                "Accept": true,
+                "Offer": {
+                    "Pension Fund": "20%"
+                }
+            }
         },
         {
             "role": "Candidate",
@@ -158,14 +395,25 @@
         },
         {
             "role": "Employer",
-            "input": "That seems reasonable to me. I agree.",
+            "input": "20% pension if you agree to no leased car.",
+            "output": {
+                "Offer": {
+                    "Leased Car": "Without leased car",
+                    "Pension Fund": "20%"
+                }
+            }
+        },
+        {
+            "role": "Candidate",
+            "input": "I agree with the offer",
             "output": {
                 "Accept": true
             }
         },
         {
-            "role": "Candidate",
-            "data": "I'm happy that you accept. We can sign the agreement now. Please pick the values in the agreement draft and press Sign."
+            "role": "Employer",
+            "input": "Wonderful!",
+            "output": {}
         }
     ]
 }

@@ -1,6 +1,5 @@
 {
-    "gender": "Male",
-    "age": "31-40",
+    "set": "test",
     "turns": [
         {
             "role": "Candidate",
