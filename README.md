@@ -1,4 +1,4 @@
-# Negochat Corpus
+# The Negochat Corpus of Human-agent Negotiation Dialogues
 
 Negochat corpus is annotated natural language human-agent dialogue corpus in the negotiation domain. The corpus was collected using Amazon Mechanical Turk following the Wizard-Of-Oz approach, where a wizard human translates the participants natural language utterances in real time into a semantic language. The corpus was introduced in the paper [The Negochat Corpus of Human-agent Negotiation Dialogues](http://www.lrec-conf.org/proceedings/lrec2016/pdf/240_Paper.pdf).
 
