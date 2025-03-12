@@ -18,4 +18,3 @@ If you make use of this software for research purposes, I'll appreciate citing t
 	}
 
 ### Contact
-For any question, please contact vaskoncv@gmail.com
